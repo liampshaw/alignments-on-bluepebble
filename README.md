@@ -15,15 +15,17 @@ run_gubbins.py --threads 8 --prefix gubbins_out --seed 12345 --verbose clean.ful
 
 If the job gets killed due to running out of time or memory, you can rerun by editing the script and using `resume`.
 
-Running `run_gubbins.sh` took about 2.5 days. This produces `gubbins.filtered_polymorphic_sites.fasta` which can be used to get a clean core aignment with `snp-sites`, then running `FastTree` to get a quick tree:
+Running `run_gubbins.sh` on 228 *Klebsiella pneumoniae* isolates from Aimee took about 2.5 days. This produces `gubbins.filtered_polymorphic_sites.fasta` which can be used to get a clean core aignment with `snp-sites`:
 
 ```
-
+# you may need to create a conda environment with snp-sites first
+# conda create -n snp-sites
+# conda activate snp-sites
+# conda install -c bioconda snp-sites
 snp-sites -c clean.full.filtered_polymorphic_sites.fasta > clean.core.postgubbins.aln 
-
-# load FastTree module
-module load fasttree/2.1.11-ypks
-# run FastTree (fast!)
-FastTree -gtr -nt clean.core.postgubbins.aln > clean.core.postgubbins.tree
 ```
+
+Then use FastTree to get a quick tree with `run_fasttree.sh`.
+
+Or alternatively, run `raxml-ng` with `run_raxml-ng.sh`.
 
