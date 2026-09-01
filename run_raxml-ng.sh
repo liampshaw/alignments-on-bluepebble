@@ -17,4 +17,4 @@ raxml-ng --all \
   --seed 12345 \
   --threads auto{8} \
   --bs-trees 1000
-  --extra thread-nopin # needed to disable raxml's thread pinning, which causes longer runtimes on cluster
+  --extra thread-nopin # may be needed to disable raxml's thread pinning, which causes longer runtimes?

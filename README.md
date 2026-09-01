@@ -27,5 +27,5 @@ snp-sites -c clean.full.filtered_polymorphic_sites.fasta > clean.core.postgubbin
 
 Then use FastTree to get a quick tree with `run_fasttree.sh`.
 
-Or alternatively, run `raxml-ng` with `run_raxml-ng.sh`.
+Or alternatively, run `raxml-ng` with `run_raxml-ng.sh`. **This is currently a work-in-progress, not yet confirmed it works.**
 
